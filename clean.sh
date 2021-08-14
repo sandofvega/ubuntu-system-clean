@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Remove packages that are no longer required
-sudo apt autoremove -y
+apt autoremove -y
 
 # Clean up APT cache
-sudo apt clean
+apt clean
 
 # Clear systemd journal logs, but keep last 1 day's log
-sudo journalctl --vacuum-time=1d
+journalctl --vacuum-time=1d
 
 # Clean the thumbnail cache
 rm -rf ~/.cache/thumbnails/*
